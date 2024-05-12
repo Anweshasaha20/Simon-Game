@@ -36,12 +36,12 @@ i=0;
 
         
 function handler(event){
-  if(gamePattern.length!=0){
+  if(!start) return;
   var userChosenColour = event.target.id;
   userClickedPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
-  checkAnswer(userClickedPattern[userClickedPattern.length-1]);}//passing the last index
+  checkAnswer(userClickedPattern[userClickedPattern.length-1]);//passing the last index
 
  
   
