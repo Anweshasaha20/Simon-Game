@@ -36,11 +36,12 @@ i=0;
 
         
 function handler(event){
+  if(gamePattern.length!=0){
   var userChosenColour = event.target.id;
   userClickedPattern.push(userChosenColour);
   playSound(userChosenColour);
   animatePress(userChosenColour);
-  checkAnswer(userClickedPattern[userClickedPattern.length-1]);//passing the last index
+  checkAnswer(userClickedPattern[userClickedPattern.length-1]);}//passing the last index
 
  
   
@@ -59,7 +60,8 @@ $("body").on( "keypress", function(){
 
 function checkAnswer(currentLevel){
   
-  if(currentLevel===gamePattern[i]){
+
+   if(currentLevel===gamePattern[i]){
     console.log("success");
     i++;
     // console.log(i);
@@ -67,6 +69,7 @@ function checkAnswer(currentLevel){
       setTimeout(nextSequence,1000);
     }
   }
+  
   else{
     console.log("wrong");
     playSound("wrong");
